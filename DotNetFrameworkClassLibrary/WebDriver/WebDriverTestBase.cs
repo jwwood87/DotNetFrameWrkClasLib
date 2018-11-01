@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Remote;
+﻿using DotNetFrameworkClassLibrary.Core;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,9 @@ using System.Threading.Tasks;
 
 namespace DotNetFrameworkClassLibrary.WebDriver
 {
-	class BrowserInfo
+	public class WebDriverTestBase : TestBase
 	{
-		private WebDriverBrowser.Browser browser;
 
-		public BrowserInfo(WebDriverBrowser.Browser browser)
-		{
-
-		}
 	}
+
 }

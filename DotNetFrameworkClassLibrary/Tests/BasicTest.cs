@@ -1,5 +1,4 @@
-﻿using DotNetFrameworkClassLibrary.Core;
-using DotNetFrameworkClassLibrary.WebDriver;
+﻿using DotNetFrameworkClassLibrary.WebDriver;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -8,7 +7,7 @@ using System.Threading;
 
 namespace DotNetFrameWrkClasLib.Tests
 {
-	class BasicTest :WebDriverBase
+	class BasicTest : WebDriverBase
 	{
 		public IWebDriver Driver;
 
