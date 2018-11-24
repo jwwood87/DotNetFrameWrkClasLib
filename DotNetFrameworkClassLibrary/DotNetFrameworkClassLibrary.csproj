@@ -57,11 +57,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\CommonStaticHelpers.cs" />
     <Compile Include="Core\Config.cs" />
     <Compile Include="Core\TestBase.cs" />
     <Compile Include="Core\TestDataContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\BasicTest.cs" />
+    <Compile Include="Tests\Utilities\UrlNavigation.cs" />
     <Compile Include="WebDriver\BrowserInfo.cs" />
     <Compile Include="WebDriver\EventedWebDriver.cs" />
     <Compile Include="WebDriver\WebDriverBase.cs" />

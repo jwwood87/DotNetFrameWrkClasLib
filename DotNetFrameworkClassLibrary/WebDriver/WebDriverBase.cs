@@ -2,24 +2,21 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System;
+using System.Text;
 
 namespace DotNetFrameworkClassLibrary.WebDriver
 {
-    class WebDriverBase : TestBase
+    public class WebDriverBase : TestBase
     {
-        public Config config = new Config();
 
-        public static IWebDriver Driver
-        {
-            get { return TestData.Driver; }
-            set { TestData.Driver = value; }
-        }
+        public static IWebDriver Driver { get; set; }
 
         [SetUp]
         public virtual void SetUp()
         {
             System.Console.WriteLine("Entering WebDriverBase Setup");
-            //LaunchBrowser();
+            LaunchBrowser();
         }
 
         [TearDown]
@@ -43,8 +40,9 @@ namespace DotNetFrameworkClassLibrary.WebDriver
         /// </summary>
         public void QuitBrowser()
         {
-            Driver.Quit();
             System.Console.WriteLine("Browser Closed");
+            Driver.Quit();
         }
+
     }
 }
