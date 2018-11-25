@@ -42,7 +42,7 @@ namespace DotNetFrameworkClassLibrary.WebDriver
 			return (Browser)Enum.Parse(typeof(Browser), name);
 		}
 
-		public IWebDriver LaunchBrowser(Browser browser)
+		public IWebDriver LaunchOneBrowser(Browser browser)
 		{
 			switch (browser)
 			{
@@ -61,9 +61,10 @@ namespace DotNetFrameworkClassLibrary.WebDriver
 			}
 			Driver.Manage().Cookies.DeleteAllCookies();
 			//SetBrowserSize();
-			var edriver = new EventedWebDriver(Driver);
+			//var edriver = new EventedWebDriver(Driver);
+			//return edriver.Driver;
 
-			return edriver.Driver;
+            return Driver;
 		}
 
 		public IWebDriver StartFirefoxBrowser()

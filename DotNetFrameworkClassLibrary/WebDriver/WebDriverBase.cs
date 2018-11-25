@@ -9,20 +9,19 @@ namespace DotNetFrameworkClassLibrary.WebDriver
 {
     public class WebDriverBase : TestBase
     {
-
         public static IWebDriver Driver { get; set; }
 
         [SetUp]
         public virtual void SetUp()
         {
-            System.Console.WriteLine("Entering WebDriverBase Setup");
+            System.Console.WriteLine(DateTime.Now.ToString() + ": Entering WebDriverBase Setup.");
             LaunchBrowser();
         }
 
         [TearDown]
         public override void TearDownTestBase()
         {
-            System.Console.WriteLine("Entering WebDriverBase TearDownTestBase");
+            System.Console.WriteLine(DateTime.Now.ToString() + ": Entering WebDriverBase TearDown.");
             QuitBrowser();
         }
 

@@ -12,7 +12,7 @@ namespace DotNetFrameworkClassLibrary.Tests.Utilities
     {
         private Config _config = new Config();
 
-        public void GoToArrowDotCom()
+        public void GoToBaseUrl()
         {
             Driver.Navigate().GoToUrl(_config.GetBaseUrl());
         }

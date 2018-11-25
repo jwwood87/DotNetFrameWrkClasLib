@@ -16,7 +16,7 @@ namespace DotNetFrameWrkClasLib.Tests
 		public void RunWebDriver()
 		{
 
-            urlNavigation.GoToArrowDotCom();
+            urlNavigation.GoToBaseUrl();
 			Driver.FindElement(By.Id("search_form_input_homepage")).Clear();
 			Driver.FindElement(By.Id("search_form_input_homepage")).SendKeys("Englewood, CO");
 			Driver.FindElement(By.Id("search_button_homepage")).Click();

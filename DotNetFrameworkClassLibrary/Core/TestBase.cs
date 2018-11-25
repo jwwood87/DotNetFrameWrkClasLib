@@ -1,13 +1,12 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DotNetFrameworkClassLibrary.Core
 {
     public abstract class TestBase
     {
-        private Config config = new Config();
+        private Config _config = new Config();
         private string _timeStamp = DateTime.Now.ToString();
         private static IDictionary<string, TestDataContainer> testDataCollection;
         public static IDictionary<string, TestDataContainer> TestDataCollection
@@ -16,12 +15,11 @@ namespace DotNetFrameworkClassLibrary.Core
             set { testDataCollection = value; }
         }
 
-
         [SetUp]
         public virtual void SetUpTestBase()
         {
-            Console.WriteLine("We're started with SetUpTestBase");
-            //testDataCollection = new Dictionary<string, TestDataContainer>();
+            Console.WriteLine(_timeStamp + ": Entering TestBase SetUp.");
+            testDataCollection = new Dictionary<string, TestDataContainer>();
         }
 
         [TearDown]
@@ -29,7 +27,7 @@ namespace DotNetFrameworkClassLibrary.Core
         {
             try
             {
-                Console.WriteLine("We're finished with TearDownTestBase");
+                Console.WriteLine(DateTime.Now.ToString() + ": Entering TestBase TearDown.");
             }
             catch (Exception e)
             {
