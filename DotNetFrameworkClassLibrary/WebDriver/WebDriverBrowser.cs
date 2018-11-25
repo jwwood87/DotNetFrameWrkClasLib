@@ -13,7 +13,7 @@ namespace DotNetFrameworkClassLibrary.WebDriver
 	class WebDriverBrowser : WebDriverBase
 	{
 		private const string BrowserLanguageIndicator = "BrowserLanguage_";
-		private IWebDriver driver;
+        //private IWebDriver driver;
 
 		public enum Browser
 		{
@@ -28,21 +28,21 @@ namespace DotNetFrameworkClassLibrary.WebDriver
 			None
 		}
 
-		public IWebDriver Driver
-		{
-			get
-			{return driver;}
+		//public IWebDriver Driver
+		//{
+		//	get
+		//	{return driver;}
 
-			set
-			{driver = value;}
-		}
+		//	set
+		//	{driver = value;}
+		//}
 
 		public static Browser GetBrowserFromString(string name)
 		{
 			return (Browser)Enum.Parse(typeof(Browser), name);
 		}
 
-		public IWebDriver LaunchOneBrowser(Browser browser)
+		public IWebDriver LaunchSelectedBrowser(Browser browser)
 		{
 			switch (browser)
 			{

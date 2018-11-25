@@ -10,16 +10,17 @@ namespace DotNetFrameworkClassLibrary.WebDriver
     public class WebDriverBase : TestBase
     {
         public static IWebDriver Driver { get; set; }
+        private Config _config = new Config();
 
         [SetUp]
-        public virtual void SetUp()
+        public override void TestBaseSetUp()
         {
             System.Console.WriteLine(DateTime.Now.ToString() + ": Entering WebDriverBase Setup.");
             LaunchBrowser();
         }
 
         [TearDown]
-        public override void TearDownTestBase()
+        public override void TestBaseTearDown()
         {
             System.Console.WriteLine(DateTime.Now.ToString() + ": Entering WebDriverBase TearDown.");
             QuitBrowser();
@@ -30,7 +31,7 @@ namespace DotNetFrameworkClassLibrary.WebDriver
         /// </summary>
         public void LaunchBrowser()
         {
-            Driver = new ChromeDriver();
+            Driver = new WebDriverBrowser().LaunchSelectedBrowser(WebDriverBrowser.GetBrowserFromString(_config.GetBrowser()));
             System.Console.WriteLine("Browser Launched");
         }
 

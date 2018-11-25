@@ -16,14 +16,14 @@ namespace DotNetFrameworkClassLibrary.Core
         }
 
         [SetUp]
-        public virtual void SetUpTestBase()
+        public virtual void TestBaseSetUp()
         {
             Console.WriteLine(_timeStamp + ": Entering TestBase SetUp.");
             testDataCollection = new Dictionary<string, TestDataContainer>();
         }
 
         [TearDown]
-        public virtual void TearDownTestBase()
+        public virtual void TestBaseTearDown()
         {
             try
             {

@@ -8,5 +8,9 @@ namespace DotNetFrameworkClassLibrary.Core
 		{
 			return ConfigurationManager.AppSettings["BaseUrl"];
 		}
-	}
+        public string GetBrowser()
+        {
+            return ConfigurationManager.AppSettings["Browser"];
+        }
+    }
 }
