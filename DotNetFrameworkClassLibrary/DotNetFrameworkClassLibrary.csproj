@@ -64,7 +64,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\BasicTest.cs" />
     <Compile Include="Tests\Utilities\UrlNavigation.cs" />
+    <Compile Include="WebDriver\BasePageHelper.cs" />
     <Compile Include="WebDriver\BrowserInfo.cs" />
+    <Compile Include="WebDriver\BasePageObject.cs" />
+    <Compile Include="WebDriver\Element.cs" />
+    <Compile Include="WebDriver\ElementVerification.cs" />
     <Compile Include="WebDriver\EventedWebDriver.cs" />
     <Compile Include="WebDriver\WebDriverBase.cs" />
     <Compile Include="WebDriver\WebDriverBrowser.cs" />
