@@ -13,14 +13,14 @@ namespace DotNetFrameworkClassLibrary.WebDriver
         private Config _config = new Config();
 
         [SetUp]
-        public override void TestBaseSetUp()
+        public virtual void SetUpWebDriverBase()
         {
             System.Console.WriteLine(DateTime.Now.ToString() + ": Entering WebDriverBase Setup.");
             LaunchBrowser();
         }
 
         [TearDown]
-        public override void TestBaseTearDown()
+        public override void TearDownTestBase()
         {
             System.Console.WriteLine(DateTime.Now.ToString() + ": Entering WebDriverBase TearDown.");
             QuitBrowser();

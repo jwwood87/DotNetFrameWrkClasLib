@@ -1,4 +1,5 @@
-﻿using DotNetFrameworkClassLibrary.Tests.Utilities;
+﻿using DotNetFrameworkClassLibrary.Tests.Pages;
+using DotNetFrameworkClassLibrary.Tests.Utilities;
 using DotNetFrameworkClassLibrary.WebDriver;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -11,6 +12,7 @@ namespace DotNetFrameWrkClasLib.Tests
 	class BasicTest : WebDriverBase
 	{
         UrlNavigation urlNavigation = new UrlNavigation();
+        DdGoMainHelper ddGoMainHelper = new DdGoMainHelper();
 
 		[Test]
 		public void RunWebDriver()
@@ -23,5 +25,14 @@ namespace DotNetFrameWrkClasLib.Tests
 			Thread.Sleep(1000);
 			Console.WriteLine("We got to the web page");
 		}
-	}
+
+        [Test]
+        public void RunWebDriver2()
+        {
+
+            urlNavigation.GoToBaseUrl();
+            ddGoMainHelper.ClickSearchFormInput();
+
+        }
+    }
 }
