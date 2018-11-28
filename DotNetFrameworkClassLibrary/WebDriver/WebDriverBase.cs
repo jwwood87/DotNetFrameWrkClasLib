@@ -10,6 +10,7 @@ namespace DotNetFrameworkClassLibrary.WebDriver
     public class WebDriverBase : TestBase
     {
         public static IWebDriver Driver { get; set; }
+
         private Config _config = new Config();
 
         [SetUp]

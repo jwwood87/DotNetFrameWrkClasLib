@@ -9,10 +9,16 @@ using System.Threading;
 
 namespace DotNetFrameWrkClasLib.Tests
 {
-	class BasicTest : WebDriverBase
+	public class BasicTest : WebDriverBase
 	{
         UrlNavigation urlNavigation = new UrlNavigation();
-        DdGoMainHelper ddGoMainHelper = new DdGoMainHelper();
+        private DdGoMainHelper ddGoMainHelper;
+
+        [SetUp]
+        public void Setup()
+        {
+            ddGoMainHelper = new DdGoMainHelper();
+        } 
 
 		[Test]
 		public void RunWebDriver()
