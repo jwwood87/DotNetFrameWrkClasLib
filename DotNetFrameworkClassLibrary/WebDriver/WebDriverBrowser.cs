@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace DotNetFrameworkClassLibrary.WebDriver
 {
-	class WebDriverBrowser : WebDriverBase
+	public class WebDriverBrowser
 	{
 		private const string BrowserLanguageIndicator = "BrowserLanguage_";
         private IWebDriver driver;
@@ -28,14 +28,14 @@ namespace DotNetFrameworkClassLibrary.WebDriver
 			None
 		}
 
-        //public IWebDriver Driver
-        //{
-        //    get
-        //    { return driver; }
+        public IWebDriver Driver
+        {
+            get
+            { return driver; }
 
-        //    set
-        //    { driver = value; }
-        //}
+            set
+            { driver = value; }
+        }
 
         public static Browser GetBrowserFromString(string name)
 		{

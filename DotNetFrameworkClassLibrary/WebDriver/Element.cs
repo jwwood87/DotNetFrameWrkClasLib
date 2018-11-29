@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DotNetFrameworkClassLibrary.WebDriver
 {
-    public class Element 
+    public class Element : IWrapsDriver, IWrapsElement
     {
         private By by;
         private string name;
@@ -84,6 +84,17 @@ namespace DotNetFrameworkClassLibrary.WebDriver
             }
         }
 
+        public IWebDriver WrappedDriver
+        {
+            get { return this.Driver; }
+            private set { this.Driver = value; }
+        }
+
+        public IWebElement WrappedElement
+        {
+            get { return this.Element_; }
+            private set { this.Element_ = value; }
+        }
         protected IWebDriver Driver
         {
             get { return Driver; }
