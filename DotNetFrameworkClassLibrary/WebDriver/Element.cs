@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Internal;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DotNetFrameworkClassLibrary.WebDriver
 {
-    public class Element : IWrapsDriver, IWrapsElement
+    public class Element : WebDriverBase, IWrapsElement
     {
         private By by;
         private string name;
@@ -16,9 +17,10 @@ namespace DotNetFrameworkClassLibrary.WebDriver
         private int timeoutSec;
         private Element root;
         private IWebElement element;
+		private IWrapsElement wrapsElement;
         private IEnumerable<Element> elements1;
 
-        protected IWebElement Element_
+		protected IWebElement Element_
         {
             get
             {
@@ -84,34 +86,37 @@ namespace DotNetFrameworkClassLibrary.WebDriver
             }
         }
 
-        public IWebDriver WrappedDriver
-        {
-            get { return this.Driver; }
-            private set { this.Driver = value; }
-        }
+		public IWebDriver Driver { get; set; }
 
-        public IWebElement WrappedElement
+		public IWebDriver WrappedDriver
+		{
+			get { return this.Driver; }
+			private set { this.Driver = value; }
+		}
+
+		public IWebElement WrappedElement
         {
             get { return this.Element_; }
             private set { this.Element_ = value; }
         }
-        protected IWebDriver Driver
-        {
-            get { return Driver; }
-            set { Driver = value; }
-        }
 
-        public Element(IWebElement element)
+		public Element(IWebElement element)
         {
             this.Element_ = element;
         }
 
-        /// <summary>
-        ///     Construct an element
-        /// </summary>
-        /// <param name="name">Human readable name of the element</param>
-        /// <param name="locator">By locator</param>
-        public Element(string name, By locator)
+		[SetUp]
+		public void Setup()
+		{
+			this.Driver = WebDriverBase.Driver;
+		}
+
+		/// <summary>
+		///     Construct an element
+		/// </summary>
+		/// <param name="name">Human readable name of the element</param>
+		/// <param name="locator">By locator</param>
+		public Element(string name, By locator)
         {
             this.Name = name;
             this.By = locator;
@@ -169,7 +174,7 @@ namespace DotNetFrameworkClassLibrary.WebDriver
         {
             try
             {
-                this.Element_.Click();
+				this.Element_.Click();
             }
             catch (InvalidOperationException e)
             {
@@ -235,5 +240,7 @@ namespace DotNetFrameworkClassLibrary.WebDriver
             }
         }
 
-    }
+		public IWebDriver Driver1 { get => Driver2; set => Driver2 = value; }
+		public IWebDriver Driver2 { get; set; }
+	}
 }

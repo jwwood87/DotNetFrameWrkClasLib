@@ -37,6 +37,7 @@ namespace DotNetFrameWrkClasLib.Tests
         {
 
             urlNavigation.GoToBaseUrl();
+			ddGoMainHelper.WaitForElements();
             ddGoMainHelper.ClickSearchFormInput();
 
         }

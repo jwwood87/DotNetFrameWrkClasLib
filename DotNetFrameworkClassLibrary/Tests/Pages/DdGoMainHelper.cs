@@ -9,15 +9,21 @@ using System.Threading.Tasks;
 
 namespace DotNetFrameworkClassLibrary.Tests.Pages
 {
-    class DdGoMainHelper : BasePageHelper
-    {
-        DdGoMainElement ddGoMainElement = new DdGoMainElement();
-        public IWebDriver Driver { get; set; }
+	class DdGoMainHelper : BasePageHelper
+	{
+		DdGoMainElement ddGoMainElement = new DdGoMainElement();
+		public IWebDriver Driver { get; set; }
 
-        public void ClickSearchFormInput()
-        {
-            WaitElapsedTime(1000);
-            ddGoMainElement.SearchFormInput.Click();
-        }
-    }
+		public void ClickSearchFormInput()
+		{
+			this.Driver = WebDriverBase.Driver;
+			WaitElapsedTime(1000);
+			ddGoMainElement.SearchFormInput.Click();
+		}
+
+		public void EnterSearchFormText(string text)
+		{
+			ddGoMainElement.SearchFormInput.GetElement();
+		}
+	}
 }

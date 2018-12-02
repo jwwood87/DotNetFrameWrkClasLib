@@ -9,13 +9,12 @@ namespace DotNetFrameworkClassLibrary.Core
 {
     public class TestDataContainer
     {
-        public string testName;
+        public string testName = "john";
         public IWebDriver Driver { get; set; }
 
         public TestDataContainer(string name)
         {
             testName = name;
-
         }
     }
 }

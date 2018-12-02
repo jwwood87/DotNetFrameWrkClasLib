@@ -49,6 +49,7 @@ namespace DotNetFrameworkClassLibrary.Core
                 testDataCollection.Add(name, container);
                 return testDataCollection[name];
             }
-        }
+			//set { testDataCollection. }
+		}
     }
 }
