@@ -112,10 +112,8 @@ namespace DotNetFrameworkClassLibrary.WebDriver
 		}
 
 		/// <summary>
-		///     Construct an element
+		/// Construct an element from an element class, used to describe a page
 		/// </summary>
-		/// <param name="name">Human readable name of the element</param>
-		/// <param name="locator">By locator</param>
 		public Element(string name, By locator)
         {
             this.Name = name;
